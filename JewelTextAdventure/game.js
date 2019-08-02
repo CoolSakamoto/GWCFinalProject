@@ -81,13 +81,13 @@ function goright()
     image.src = "https://www.puppyup.org/wp-content/uploads/2019/04/mountain-of-kibble-300x239.jpg"
 
     var startover = document.getElementById("startover");
-    startover.style.display = "none";
+    startover.style.display = "block";
 
     var lrbuttons = document.getElementById("left-right-buttons");
     lrbuttons.style.display = "none";
 
     var ynbuttons = document.getElementById("yes-no-buttons");
-    ynbuttons.style.display = "block"
+    ynbuttons.style.display = "none"
 }
 //sound option
 function goblue()
