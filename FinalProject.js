@@ -29,7 +29,7 @@ function quit()
     var choose = document.getElementById("choose");
     choose.innerHTML = '';
 
-    var lrbuttons = document.getElementById("left-right-buttons");
+    var lrbuttons = document.getElementById("choice1-buttons");
     lrbuttons.style.display = "none";
 
     var startover = document.getElementById("startover");
@@ -45,7 +45,7 @@ function startgame()
     var image = document.getElementById("image");
     image.src = "https://img.purch.com/h/1000/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzEwNC81NzQvb3JpZ2luYWwvbmdjMzA3OS1jaGFuZHJhLXNwYWNlLWJ1YmJsZXMuanBn";
 
-    var lrbuttons = document.getElementById("left-right-buttons");
+    var lrbuttons = document.getElementById("choice1-buttons");
     lrbuttons.style.display = "block";
 
     var buttons = document.getElementById("blue-yellow-buttons");
@@ -66,7 +66,7 @@ function choice2()
     var image = document.getElementById("image");
     image.src = "download.jpg";
 
-    var lrbuttons = document.getElementById("left-right-buttons");
+    var lrbuttons = document.getElementById("choice1-buttons");
     lrbuttons.style.display = "none";
 
     var bybuttons = document.getElementById("blue-yellow-buttons");
@@ -87,7 +87,7 @@ function goright()
     var startover = document.getElementById("startover");
     startover.style.display = "none";
 
-    var lrbuttons = document.getElementById("left-right-buttons");
+    var lrbuttons = document.getElementById("choice1-buttons");
     lrbuttons.style.display = "none";
 
     var ynbuttons = document.getElementById("yes-no-buttons");
@@ -102,7 +102,7 @@ function goblue()
     var image = document.getElementById("image");
     image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
 
-    var lrbuttons = document.getElementById("left-right-buttons");
+    var lrbuttons = document.getElementById("choice1-buttons");
     lrbuttons.style.display = "none";
     var bybuttons = document.getElementById("blue-yellow-buttons");
     bybuttons.style.display = "none";
@@ -120,7 +120,7 @@ function goyellow()
     var image = document.getElementById("image");
     image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
 
-    var lrbuttons = document.getElementById("left-right-buttons");
+    var lrbuttons = document.getElementById("choice1-buttons");
     lrbuttons.style.display = "none";
     var bybuttons = document.getElementById("blue-yellow-buttons");
     bybuttons.style.display = "none";
