@@ -15,6 +15,8 @@ var end_of_story_blue_yellow = " You only have 3 seconds left and you're thinkin
 
 var quitstr = "Thank you for playing this game!"
 
+var item
+
 function quit()
 {
 
@@ -56,7 +58,7 @@ function startgame()
     ynbuttons.style.display = "none"
 }
 
-function goleft()
+function choice2()
 {
     var element = document.getElementById("game");
     element.innerHTML = leftPlanet;
@@ -73,7 +75,7 @@ function goleft()
     var ynbuttons = document.getElementById("yes-no-buttons");
     ynbuttons.style.display = "none"
 }
-
+/**
 function goright()
 {
     var element = document.getElementById("game");
@@ -90,7 +92,7 @@ function goright()
 
     var ynbuttons = document.getElementById("yes-no-buttons");
     ynbuttons.style.display = "block"
-}
+} **/
 //sound option
 function goblue()
 {
@@ -128,4 +130,16 @@ function goyellow()
 
     var ynbuttons = document.getElementById("yes-no-buttons");
     ynbuttons.style.display = "block"
+}
+
+function choosePills(){
+    item = "Pills";
+}
+
+function chooseSpaceGun(){
+    item = "SpaceGun";
+}
+
+function chooseWorktools(){
+    item = "Worktools";
 }
