@@ -10,33 +10,44 @@
   <h2>G2V-S3</h2>
   <div class="row">
     <div class="column" style="background-color:#aaa;">
-      <h2>Story:</h2>
+      <!--h2>Story:</h2-->
+      <div>
+        <h2 id="heading"></h2>
+    	</div>
       <div class="w3-center">
     	<img id="image" height="250px" width="250px">
     	</div>
 
-    	<div id="game" class="w3-container w3-center">
+    	<div id="game">
     	</div>
     </div>
 
     <div class="column" style="background-color:#bbb;">
       <h2>Choose:</h2>
-      <div id="choice1-buttons">
-    	    <button id="Pills" onclick="choice2(); choosePills();">Take Pills</button> |
-    	    <button id="SpaceGun" onclick="choice2(); chooseSpaceGun();">Take Space Gun</button> |
-          <button id="Worktools" onclick="choice2(); chooseWorktools();">Take Worktools</button>
+      <div id="choose-weapon-buttons">
+    	    <button id="Pills" onclick="chooseWeapon(1)">Take Pills</button> |
+    	    <button id="SpaceGun" onclick="chooseWeapon(2)">Take Space Gun</button> |
+          <button id="Worktools" onclick="chooseWeapon(3)">Take Worktools</button>
     	</div>
-      <div id="blue-yellow-buttons" class="w3-container w3-teal w3-center">
-    	    <button id="blue" onclick="goblue()">SOUND</button> |
-    	    <button id="yellow" onclick="goyellow()">LIGHT</button>
+      <div id="greet-crew-buttons">
+    	    <button id="Erwin" onclick="greetCrew(1)">Say "Hi" to Erwin</button> |
+    	    <button id="Riza" onclick="greetCrew(2)">Say "Hi" to Riza</button> |
+          <button id="Ignore" onclick="greetCrew(3)">Ignore and sit on couch.</button>
+    	</div>
+      <div id="check-watch-buttons" class="w3-container w3-teal w3-center">
+    	    <button id="Read" onclick="checkWatch(1)">Read file</button> |
+    	    <button id="Contact" onclick="checkWatch(2)">Contact Commander</button>
+    	</div>
+      <div id="escape-method-buttons" class="w3-container w3-teal w3-center">
+    	    <button id="Pod" onclick="escapeMethod(1)">Head to pod</button> |
+    	    <button id="Airlock" onclick="escapeMethod(2)">Throw myself out of the airlock</button>
+    	</div>
+      <div id="part1-end-button" class="w3-container w3-teal w3-center">
+    	    <button id="Part1End" onclick="continueToPart2()">Press here to continue to Section 2: The Ship.</button>
     	</div>
     	<div id="startover" class="w3-container w3-teal w3-center">
     	    <button  onclick="startgame()">STARTOVER</button> |
     	    <button  onclick="quit()">QUIT</button>
-    	</div>
-      <div id="yes-no-buttons" class="w3-container w3-teal w3-center">
-    	    <button id="yes" onclick="yes()">YES</button> |
-    	    <button id="no" onclick="no()">NO</button>
     	</div>
     </div>
   </div>
