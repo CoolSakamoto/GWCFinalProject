@@ -12,7 +12,7 @@ var outsideRoom = "I head out of my room toward the living quarter, I notice the
 var hiErwin = "Erwin talks a lot about being excited about going to 'G2V-S3', this is going to be his second mission as the pilot. "
 var hiRiza = "Riza talks about how boring the food is. "
 var ignore = "I watch whatever on my console. While watching my show, Kyoya and Yoruichi emerge from their rooms. I get ready to read the message Commander Hellsing sent. "
-var greetCrewText = "The message finally loads on the big screen, and a peppy automated voice greets us. 'Hello crewmates, this is the day! You guys are heading towards G2V-S3. I hope you guys can find out more about this planet. What we know, this planet used to have sight of live about 2,000 years ago. But now it is full of dangerous air pollution and greenhouse gasses. Along with it almost being completely covered in water but yet it's really hot. You need to investigate the planet and try to restore the planet. You only have a limited amount of water supplies. Good luck and don&apos;t die.'"+ "I stared at the blank screen, bewildered. Things like this just don&apos;t get thrown at you out of the blue. I look down at the wristwatch that has been placed expertly on the surface of your space wear. "
+var greetCrewText = "The message finally loads on the big screen, and a peppy automated voice greets us. 'Hello crewmates, this is the day! You guys are heading towards G2V-S3. I hope you guys can find out more about this planet. What we know, this planet used to have sight of live about 2,000 years ago. But now it is full of dangerous air pollution and greenhouse gasses. Along with it almost being completely covered in water but yet it&apos;s really hot. You need to investigate the planet and try to restore the planet. You only have a limited amount of water supplies. Good luck and don&apos;t die.'"+ "I stared at the blank screen, bewildered. Things like this just don&apos;t get thrown at you out of the blue. I look down at the wristwatch that has been placed expertly on the surface of your space wear. "
 
 //checkWatch()
 //Are we supposed to have actual file info here? maybe we could just upload a pic or smth"
@@ -27,6 +27,22 @@ var airlock = "You die lolz and your crewmates just look at you in disappointmen
 //SECTION 2: THE SHIP start
 //continueToPart2()
 var theShip = "The ship is one of the sleeker, new models. Fitted with thrusters, and the wings are light and durable. Clearly an exploration ship, with only one ion cannon for emergencies. I ran my hand under the belly of the ship, marveling the clean cuts on the paneling, and the material it was made out of. Silica, to handle damage. I had only one bag with me, with only the necessary items. A photograph of my family, and (item they picked up). It should be enough, after all, we are being provided by the main command."
+
+//insideShip()
+var explore = "The main brig is set with controls, automated for the most part. Though it&apos;s always necessary to keep a human element in case of errors. That&apos;s signified by the steering wheel in the middle of the helm. There are other seats, elevated as you went away from the pilot&apos;s seat. The window was tinted to block harmful rays, but you could still see outside. The ship itself was inherently spacious. More than it looked like on the outside."
+  var inspect = "The ship&apos;s engine is something that I am quite interested in. Specifically, which sort of engine, the makers of this ship have decided to use. Each engine is different as if they have individual personalities, it&apos;s important to know how to care for them. The main propulsion engines seemed to be running on hydrocarbons- something that I could really work with. I slide on my back, popping open one of the panels to check the more vital parts of the ship. Gingerly brushing away wires. My nose wrinkled when I found a loose-ish canister. It was the tachyon-balls set in a bearing that would provide power for the ship. They let the ship travel Faster Than Light. The ship&apos;s engine appears to be broken. "
+    //(If OP had ‘worktools’ they could fix the engine, else they have to live with that on their conscience) //conscience? maybe this should have bigger consequences ****
+    //need variable for if engine fixed?*
+    var yesTools = "Thankfully I took my worktools with me; now I can fix the ship."
+    var noTools = "If only I had taken my worktools, then I would have been able to fix the ship."
+    var isEngineFixed = false;
+
+var backToRoom = "I was pleasantly surprised that the command ship had managed to load my handprint into the ship&apos;s systems. All I had to do was press my hand against the control panel, and the metal door slid open to reveal my room. The setup was bare, simple. One bed with an overhang for storage. A desk, and a chiffarobe for me to set my clothes and other miscellaneous items. "
+var team = "Erwin Smith (Pilot); Kyoya Ootori (Navigator);	Riza Hawkeye (Medic);	Yoruichi Shihoyin (Expedition) "
+
+	//*after clicking one option, blastOff option appears?
+var blastOff = "Going to be making a stop in a nebulae 5,000 light-years away (5-hour trip). We all strap into our perspective seats, readying for the rocketing of the jump. The only person on this ship that hasn&apos;t experienced FTL travel is possibly Kyoya, our navigator. Though, he seems to be doing pretty well for a first-timer. "
+
 
 
 var quitstr = "Thank you for playing this game!"
@@ -70,16 +86,18 @@ function startgame()
 
     document.getElementById("escape-method-buttons").style.display = "none";
     document.getElementById("part1-end-button").style.display = "none";
+    document.getElementById("inside-ship-buttons").style.display = "none";
+    document.getElementById("BlastOff").style.display = "none";
 }
 
 function chooseWeapon(choice)
 {
   if (choice == 1){
-    item = "Pills";
+    item = 1;
   } else if (choice == 2){
-    item = "SpaceGun";
+    item = 2;
   } else if (choice == 3){
-    item = "Worktools";
+    item = 3;
   }
     var element = document.getElementById("game");
     element.innerHTML = outsideRoom;
@@ -141,7 +159,47 @@ function escapeMethod(choice)
 
 function continueToPart2(){
   document.getElementById("part1-end-button").style.display = "none";
+  document.getElementById("inside-ship-buttons").style.display = "block";
+  document.getElementById("Inspect").style.display = "none";
+  document.getElementById("BlastOff").style.display = "none";
   document.getElementById("game").innerHTML = theShip;
   //add buttons 8/4/2019...line 33 of organized info
 
+}
+
+function insideShip(choice)
+{
+    if (choice == 1){
+      document.getElementById("game").innerHTML = explore;
+      document.getElementById("Explore").style.display = "none";
+      document.getElementById("Inspect").style.display = "block";
+
+    } else if (choice == 2){
+      document.getElementById("game").innerHTML = backToRoom;
+    } else if (choice == 3){
+      document.getElementById("game").innerHTML = team;
+    }
+    document.getElementById("BlastOff").style.display = "block";
+    if (choice == 4){ //inspect engine
+      //(If OP had ‘worktools’ they could fix the engine, else they have to live with that on their conscience) //conscience? maybe this should have bigger consequences ****
+      //*if (item == worktools){Thankfully I took my worktools with me; now I can fix the ship.}
+      //*else {If only I had taken my worktools, then I would have been able to fix the ship.}
+      //need variable for if engine fixed?*
+      if (item == 3){ //chooses Worktools in chooseWeapon()
+        document.getElementById("game").innerHTML = inspect + yesTools;
+        isEngineFixed = true;
+      } else {
+        document.getElementById("game").innerHTML = inspect + noTools;
+      }
+    }
+    var image = document.getElementById("image");
+    image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
+    //only for next function blastOff(): document.getElementById("inside-ship-buttons").style.display = "none";
+    //document.getElementById("check-watch-buttons").style.display = "block";
+}
+
+function blastOff(){
+  javascript:alert("hello world");
+  document.getElementById("inside-ship-buttons").style.display = "none";
+  document.getElementById("game").innerHTML = blastOff;
 }
