@@ -1,10 +1,10 @@
 //test javascript using:
 //javascript:alert("hello world");
-
+//use <br> to make a break line
 var section1 = "Section 1: The Beginning"
 var start = "I woke up to the tinny noise of the alarm going off." +
 " I was about to reach over to slap the alarm off, but to my surprise, it was actually the ship&apos;s alarm blaring..." +
-"Probably a message from the commander.\n\n" + "There&apos;s stuff on my bedside table, and in my stupor, I reach out and grab the first thing my hand lands on:"
+"Probably a message from the commander.<br>" + "There&apos;s stuff on my bedside table, and in my stupor, I reach out and grab the first thing my hand lands on:"
 
 var outsideRoom = "I head out of my room toward the living quarter, I notice the other crew member, Erwin also awake along with Riza standing by the control panels. The control panel is growing, as a message from Commander Integra Hellsing loads. "
 
@@ -25,6 +25,7 @@ var pod = "I am now in the ship. "
 var airlock = "You die lolz and your crewmates just look at you in disappointment. (You&apos;re stupid.) " //welp guess we're keeping this in?
 
 //SECTION 2: THE SHIP start
+var section2 = "Section 2: The Ship"
 //continueToPart2()
 var theShip = "The ship is one of the sleeker, new models. Fitted with thrusters, and the wings are light and durable. Clearly an exploration ship, with only one ion cannon for emergencies. I ran my hand under the belly of the ship, marveling the clean cuts on the paneling, and the material it was made out of. Silica, to handle damage. I had only one bag with me, with only the necessary items. A photograph of my family, and (item they picked up). It should be enough, after all, we are being provided by the main command."
 
@@ -36,14 +37,16 @@ var explore = "The main brig is set with controls, automated for the most part. 
     var yesTools = "Thankfully I took my worktools with me; now I can fix the ship."
     var noTools = "If only I had taken my worktools, then I would have been able to fix the ship."
     var isEngineFixed = false;
-
 var backToRoom = "I was pleasantly surprised that the command ship had managed to load my handprint into the ship&apos;s systems. All I had to do was press my hand against the control panel, and the metal door slid open to reveal my room. The setup was bare, simple. One bed with an overhang for storage. A desk, and a chiffarobe for me to set my clothes and other miscellaneous items. "
-var team = "Erwin Smith (Pilot); Kyoya Ootori (Navigator);	Riza Hawkeye (Medic);	Yoruichi Shihoyin (Expedition) "
+var team = "Erwin Smith (Pilot) <br> Kyoya Ootori (Navigator) <br>	Riza Hawkeye (Medic) <br>	Yoruichi Shihoyin (Expedition) "
 
-	//*after clicking one option, blastOff option appears?
+//*after clicking one option, blastOff option appears
 var blastOff = "Going to be making a stop in a nebulae 5,000 light-years away (5-hour trip). We all strap into our perspective seats, readying for the rocketing of the jump. The only person on this ship that hasn&apos;t experienced FTL travel is possibly Kyoya, our navigator. Though, he seems to be doing pretty well for a first-timer. "
 
-
+//afterBlast()
+var exploreTwo = "While the ship makes it to the first rest stop, I suppose it should be best to try to do my job. I looked through the drawers in the main hangar and was able to find better tools to provide for me. I looked through the tools and was pleasantly surprised by the selection. Aside from the main hanger, I decided to check the loading bay, which was full of our food and water for the trip. It seems like the ship was stocked for a good few days. Two weeks max. Possibly for the roundtrip. "
+//must rest
+var rest = "The five hours pass easily, everyone trying to get into pace with the ship. <br>" + "DAY 1: Success <br>" + "DAY 2: No mishaps, refueled <br>" + "DAY 3: finally realized how good dried (insert food) tastes <br>"+ "DAY 4: There is a jolt that hits the side of our ship, sending me crashing into my breakfast. 'What was that?' Riza asked, looking up at me from her novel. 'I don&apos;t know, let me check it out,' said Yoruichi. She comes back from the helm looking quite distressed. Apparently, flight plans didn&apos;t know we were running through an asteroid belt. "
 
 var quitstr = "Thank you for playing this game!"
 
@@ -88,6 +91,7 @@ function startgame()
     document.getElementById("part1-end-button").style.display = "none";
     document.getElementById("inside-ship-buttons").style.display = "none";
     document.getElementById("BlastOff").style.display = "none";
+    document.getElementById("after-blast-buttons").style.display = "none";
 }
 
 function chooseWeapon(choice)
@@ -158,6 +162,7 @@ function escapeMethod(choice)
 }
 
 function continueToPart2(){
+  document.getElementById("heading").innerHTML = section2;
   document.getElementById("part1-end-button").style.display = "none";
   document.getElementById("inside-ship-buttons").style.display = "block";
   document.getElementById("Inspect").style.display = "none";
@@ -198,8 +203,25 @@ function insideShip(choice)
     //document.getElementById("check-watch-buttons").style.display = "block";
 }
 
-function blastOff(){
-  javascript:alert("hello world");
+function blastOffNow() {
   document.getElementById("inside-ship-buttons").style.display = "none";
   document.getElementById("game").innerHTML = blastOff;
+  document.getElementById("BlastOff").style.display = "none";
+    document.getElementById("after-blast-buttons").style.display = "block";
+}
+
+function afterBlast(choice)
+{
+    document.getElementById("BlastOff").style.display = "none";
+    if (choice == 1){
+      document.getElementById("game").innerHTML = rest;
+      document.getElementById("after-blast-buttons").style.display = "none";
+    } else if (choice == 2){
+      document.getElementById("game").innerHTML = exploreTwo;
+      document.getElementById("ExploreHanger").style.display = "none";
+      //document.getElementById("startover").style.display = "block";
+    }
+
+    var image = document.getElementById("image");
+    image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
 }

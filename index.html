@@ -52,8 +52,12 @@
           <button id="Explore" onclick="insideShip(1)">Explore the ship</button>
     	</div>
       <div>
-          <button id="BlastOff" onclick="blastOff()">Blast off</button>
+          <button id="BlastOff" onclick="blastOffNow()">Blast off</button>
       </div>
+      <div id="after-blast-buttons" class="w3-container w3-teal w3-center">
+    	    <button id="Rest" onclick="afterBlast(1)">Rest</button>
+    	    <button id="ExploreHanger" onclick="afterBlast(2)">Explore Hanger</button>
+    	</div>
     	<div id="startover" class="w3-container w3-teal w3-center">
     	    <button  onclick="startgame()">STARTOVER</button>
     	    <button  onclick="quit()">QUIT</button>
