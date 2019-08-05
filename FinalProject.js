@@ -16,7 +16,7 @@ var greetCrewText = "The message finally loads on the big screen, and a peppy au
 
 //checkWatch()
 //Are we supposed to have actual file info here? maybe we could just upload a pic or smth"
-var readFile = "INSERT FILE INFORMATION "
+var readFile = "Goal: planet G2V-S3 <br> One known to be full of life, but lost life approximately 50,000 years ago. Reasons unknown, but the Fleet still hopes that we will be able to restore the planet to the habitable paradise it once was. " 
 var contactCommander = "Commander Hellsing tells me that someone needs to go there first to see if the planet is safe for life. "
 var checkWatchText = "My team and I start to head towards the control room to talk about who is going to go; they decide that I should go. "
 
