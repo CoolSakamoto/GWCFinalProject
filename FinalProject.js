@@ -16,7 +16,7 @@ var greetCrewText = "The message finally loads on the big screen, and a peppy au
 
 //checkWatch()
 //Are we supposed to have actual file info here? maybe we could just upload a pic or smth"
-var readFile = "Goal: planet G2V-S3 <br> One known to be full of life, but lost life approximately 50,000 years ago. Reasons unknown, but the Fleet still hopes that we will be able to restore the planet to the habitable paradise it once was. " 
+var readFile = "Goal: planet G2V-S3 <br> One known to be full of life, but lost life approximately 50,000 years ago. Reasons unknown, but the Fleet still hopes that we will be able to restore the planet to the habitable paradise it once was. "
 var contactCommander = "Commander Hellsing tells me that someone needs to go there first to see if the planet is safe for life. "
 var checkWatchText = "My team and I start to head towards the control room to talk about who is going to go; they decide that I should go. "
 
@@ -48,12 +48,13 @@ var exploreTwo = "While the ship makes it to the first rest stop, I suppose it s
 //must rest
 var rest = "The five hours pass easily, everyone trying to get into pace with the ship. <br>" + "DAY 1: Success <br>" + "DAY 2: No mishaps, refueled <br>" + "DAY 3: finally realized how good dried (insert food) tastes <br>"+ "DAY 4: There is a jolt that hits the side of our ship, sending me crashing into my breakfast. 'What was that?' Riza asked, looking up at me from her novel. 'I don&apos;t know, let me check it out,' said Yoruichi. She comes back from the helm looking quite distressed. Apparently, flight plans didn&apos;t know we were running through an asteroid belt. "
 
-var panic = "My spoon drops in the oatmeal, the room going silent. Only for a moment, as the ship rockets to the other side again. We better start figuring out how to solve the problem. 'Let’s get on this, team!' Riza says, sounding confident. Erwin was at the pilot chair, his hands now white on the joysticks. The tension in his shoulders seemed to relax a little when he realized that the whole team was now present, and he immediately starts lending orders. The order I got was fairly straightforward, to check the ship&apos;s systems to make sure that we were running in order."
+//panicButtons()
+var panic = "My spoon drops in the oatmeal, the room going silent. Only for a moment, as the ship rockets to the other side again. We better start figuring out how to solve the problem. 'Let&apos;s get on this, team!' Riza says, sounding confident. Erwin was at the pilot chair, his hands now white on the joysticks. The tension in his shoulders seemed to relax a little when he realized that the whole team was now present, and he immediately starts lending orders. The order I got was fairly straightforward, to check the ship&apos;s systems to make sure that we were running in order."
+var mainBrig = "I immediately stand up, setting my oatmeal back in the fridge, and set off to the main brig. We might have to do a full inspection of the engines to see what the situation is. 'Let&apos;s get on this, team!' Riza says, sounding confident. Erwin was at the pilot chair, his hands now white on the joysticks. The tension in his shoulders seemed to relax a little when he realized that the whole team was now present, and he immediately starts lending orders. The order I got was fairly straightforward, to check the ship&apos;s systems to make sure that we were running in order."
 
-var mainBrig = "I immediately stand up, setting my oatmeal back in the fridge, and set off to the main brig. We might have to do a full inspection of the engines to see what the situation is. 'Let’s get on this, team!' Riza says, sounding confident. Erwin was at the pilot chair, his hands now white on the joysticks. The tension in his shoulders seemed to relax a little when he realized that the whole team was now present, and he immediately starts lending orders. The order I got was fairly straightforward, to check the ship&apos;s systems to make sure that we were running in order."
-
-var checkEngine = "There is a hit to the main engine, and one of the turbines. You will have to fix it as soon as you get to a safe spot. Especially the Tachyon bearings. 'We have issues with a few things, but we can&apos;t fix them now.' Erwin blinked, and nodded, now maneuvering with a certain skill that can only be achieved with years of training. When we got out of the debris, the ship slowed gently, and all eyes went on me. 'I&apos;ll get right to that engine, huh?'' I chuckled, retrieving my tools, and zipping up my spacesuit. Fixing the Tachyon bearings was a simple task, you learned how to do that very early in spacecraft safety. Without the bearings, we could have easily been lost in the depths of space."
-
+//CheckEngine()
+var checkEngine = "There is a hit to the main engine, and one of the turbines. You will have to fix it as soon as you get to a safe spot. Especially the Tachyon bearings. 'We have issues with a few things, but we can&apos;t fix them now.' Erwin blinked, and nodded, now maneuvering with a certain skill that can only be achieved with years of training. When we got out of the debris, the ship slowed gently, and all eyes went on me. 'I&apos;ll get right to that engine, huh?' I chuckled, retrieving my tools, and zipping up my spacesuit. Fixing the Tachyon bearings was a simple task, you learned how to do that very early in spacecraft safety. Without the bearings, we could have easily been lost in the depths of space."
+  var engineFixed = "The system diagnostics look in shape, all systems running fully functionally. We should be good to go."
 var checkSystem = "Online systems seem to be working, there are no glitches or malfunctions. Oxygen levels are steady, and there is no damage to fuel cells. It seems like everything is ok with the online systems, and you give Erwin a 'Systems are a go'."
 //(When they get out of the asteroid belt and travel, they die)
 
@@ -248,9 +249,9 @@ function panicButtons(choice)
     if (choice == 1){ //panic
       document.getElementById("game").innerHTML = panic;
       document.getElementById("Panic").style.display = "none";
-    } else if (choice == 2){
+    } else if (choice == 2){ //mainbrig
       document.getElementById("game").innerHTML = mainBrig;
-      document.getElementById("MainBrig").style.display = "none";
+      document.getElementById("panic-buttons").style.display = "none";
       document.getElementById("check-engine-buttons").style.display = "block";
       //document.getElementById("startover").style.display = "block";
     }
@@ -270,6 +271,9 @@ function CheckEngine(choice)
 {
     document.getElementById("MainBrig").style.display = "none";
     if (choice == 1){
+      if (isEngineFixed == true){
+        document.getElementById("game").innerHTML = engineFixed;
+      }
       document.getElementById("game").innerHTML = checkEngine;
       document.getElementById("check-engine-buttons").style.display = "none";
     } else if (choice == 2){
