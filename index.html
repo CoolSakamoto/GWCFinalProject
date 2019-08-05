@@ -58,6 +58,17 @@
     	    <button id="Rest" onclick="afterBlast(1)">Rest</button>
     	    <button id="ExploreHanger" onclick="afterBlast(2)">Explore Hanger</button>
     	</div>
+      <div id="panic-buttons" class="w3-container w3-teal w3-center">
+    	    <button id="Panic" onclick="panicButtons(1)">Panic</button>
+    	    <button id="MainBrig" onclick="panicButtons(2)">Main Brig</button>
+    	</div>
+      <div>
+          <button id="Jump" onclick="fastForward()">Jump</button>
+      </div>
+      <div id="check-engine-buttons" class="w3-container w3-teal w3-center">
+          <button id="Checkengine" onclick="CheckEngine(1)">Check the engine</button>
+          <button id="Checksystem" onclick="CheckEngine(2)">Check the system</button>
+      </div>
     	<div id="startover" class="w3-container w3-teal w3-center">
     	    <button  onclick="startgame()">STARTOVER</button>
     	    <button  onclick="quit()">QUIT</button>

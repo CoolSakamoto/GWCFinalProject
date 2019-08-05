@@ -48,6 +48,17 @@ var exploreTwo = "While the ship makes it to the first rest stop, I suppose it s
 //must rest
 var rest = "The five hours pass easily, everyone trying to get into pace with the ship. <br>" + "DAY 1: Success <br>" + "DAY 2: No mishaps, refueled <br>" + "DAY 3: finally realized how good dried (insert food) tastes <br>"+ "DAY 4: There is a jolt that hits the side of our ship, sending me crashing into my breakfast. 'What was that?' Riza asked, looking up at me from her novel. 'I don&apos;t know, let me check it out,' said Yoruichi. She comes back from the helm looking quite distressed. Apparently, flight plans didn&apos;t know we were running through an asteroid belt. "
 
+var panic = "My spoon drops in the oatmeal, the room going silent. Only for a moment, as the ship rockets to the other side again. We better start figuring out how to solve the problem. 'Let’s get on this, team!' Riza says, sounding confident. Erwin was at the pilot chair, his hands now white on the joysticks. The tension in his shoulders seemed to relax a little when he realized that the whole team was now present, and he immediately starts lending orders. The order I got was fairly straightforward, to check the ship&apos;s systems to make sure that we were running in order."
+
+var mainBrig = "I immediately stand up, setting my oatmeal back in the fridge, and set off to the main brig. We might have to do a full inspection of the engines to see what the situation is. 'Let’s get on this, team!' Riza says, sounding confident. Erwin was at the pilot chair, his hands now white on the joysticks. The tension in his shoulders seemed to relax a little when he realized that the whole team was now present, and he immediately starts lending orders. The order I got was fairly straightforward, to check the ship&apos;s systems to make sure that we were running in order."
+
+var checkEngine = "There is a hit to the main engine, and one of the turbines. You will have to fix it as soon as you get to a safe spot. Especially the Tachyon bearings. 'We have issues with a few things, but we can&apos;t fix them now.' Erwin blinked, and nodded, now maneuvering with a certain skill that can only be achieved with years of training. When we got out of the debris, the ship slowed gently, and all eyes went on me. 'I&apos;ll get right to that engine, huh?'' I chuckled, retrieving my tools, and zipping up my spacesuit. Fixing the Tachyon bearings was a simple task, you learned how to do that very early in spacecraft safety. Without the bearings, we could have easily been lost in the depths of space."
+
+var checkSystem = "Online systems seem to be working, there are no glitches or malfunctions. Oxygen levels are steady, and there is no damage to fuel cells. It seems like everything is ok with the online systems, and you give Erwin a 'Systems are a go'."
+//(When they get out of the asteroid belt and travel, they die)
+
+var jump = "DAY 5: No anomalies detected <br>" + "DAY 6: Frick? he has a low bp panicTM"
+
 var quitstr = "Thank you for playing this game!"
 
 var item
@@ -92,6 +103,9 @@ function startgame()
     document.getElementById("inside-ship-buttons").style.display = "none";
     document.getElementById("BlastOff").style.display = "none";
     document.getElementById("after-blast-buttons").style.display = "none";
+    document.getElementById("panic-buttons").style.display = "none";
+    document.getElementById("check-engine-buttons").style.display = "none";
+    document.getElementById("Jump").style.display = "none";
 }
 
 function chooseWeapon(choice)
@@ -167,6 +181,8 @@ function continueToPart2(){
   document.getElementById("inside-ship-buttons").style.display = "block";
   document.getElementById("Inspect").style.display = "none";
   document.getElementById("BlastOff").style.display = "none";
+  document.getElementById("panicButtons").style.display = "none";
+  document.getElementById("CheckEngine").style.display = "none";
   document.getElementById("game").innerHTML = theShip;
   //add buttons 8/4/2019...line 33 of organized info
 
@@ -207,7 +223,7 @@ function blastOffNow() {
   document.getElementById("inside-ship-buttons").style.display = "none";
   document.getElementById("game").innerHTML = blastOff;
   document.getElementById("BlastOff").style.display = "none";
-    document.getElementById("after-blast-buttons").style.display = "block";
+  document.getElementById("after-blast-buttons").style.display = "block";
 }
 
 function afterBlast(choice)
@@ -216,9 +232,50 @@ function afterBlast(choice)
     if (choice == 1){
       document.getElementById("game").innerHTML = rest;
       document.getElementById("after-blast-buttons").style.display = "none";
-    } else if (choice == 2){
+      document.getElementById("panic-buttons").style.display = "block";
+    } else if (choice == 2){ //explore hanger
       document.getElementById("game").innerHTML = exploreTwo;
       document.getElementById("ExploreHanger").style.display = "none";
+    }
+
+    var image = document.getElementById("image");
+    image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
+}
+
+function panicButtons(choice)
+{
+    document.getElementById("Rest").style.display = "none";
+    if (choice == 1){ //panic
+      document.getElementById("game").innerHTML = panic;
+      document.getElementById("Panic").style.display = "none";
+    } else if (choice == 2){
+      document.getElementById("game").innerHTML = mainBrig;
+      document.getElementById("MainBrig").style.display = "none";
+      document.getElementById("check-engine-buttons").style.display = "block";
+      //document.getElementById("startover").style.display = "block";
+    }
+
+    var image = document.getElementById("image");
+    image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
+}
+
+function fastForward() {
+  document.getElementById("panic-buttons").style.display = "none";
+  document.getElementById("game").innerHTML = jump;
+  document.getElementById("Jump").style.display = "none";
+  document.getElementById("check-engine-buttons").style.display = "block";
+}
+
+function CheckEngine(choice)
+{
+    document.getElementById("MainBrig").style.display = "none";
+    if (choice == 1){
+      document.getElementById("game").innerHTML = checkEngine;
+      document.getElementById("check-engine-buttons").style.display = "none";
+    } else if (choice == 2){
+      document.getElementById("game").innerHTML = checkSystem;
+      document.getElementById("Checksystem").style.display = "none";
+      document.getElementById("Jump").style.display = "block";
       //document.getElementById("startover").style.display = "block";
     }
 
