@@ -59,10 +59,33 @@ var checkSystem = "Online systems seem to be working, there are no glitches or m
 //(When they get out of the asteroid belt and travel, they die)
 var jumpFail = "The engine was never fixed, so the jump failed. The entire crew died. Game over. "
 var jump = "DAY 5: No anomalies detected"
-var gotonextday = "DAY 6: We were all resting in the living quarters. Kyoya and Riza were arguing over what&apos;s the best way to travel if you couldn&apos;t travel faster than light, while Erwin and Yoruichi and are trying to figure out what to do. I was trying to read up on the latest news from home planet when I heard the space alert, and started to walk toward the control panel to see what&apos;s happening; We&apos;re heading towards a black hole!! We all got into position to try and leave the black hole but it's no use. There was a simple rule with blackholes: you start to sink in faster the closer you get. Everyone is panicking, 'We are getting nowhere, what should we do?!'' said Kyoya, clearly agitated by the situation. While chaos ensues, I start to feel dizzy and lightheaded along with a nagging pain in my chest and not being able to breathe. I let out a soft curse, I was having a panic attack!!"
+var gotonextday = "DAY 6: We were all resting in the living quarters. Kyoya and Riza were arguing over what&apos;s the best way to travel if you couldn&apos;t travel faster than light, while Erwin and Yoruichi and are trying to figure out what to do. I was trying to read up on the latest news from home planet when I heard the space alert, and started to walk toward the control panel to see what&apos;s happening; We&apos;re heading towards a black hole!! We all got into position to try and leave the black hole but it's no use. There was a simple rule with blackholes: you start to sink in faster the closer you get. Everyone is panicking, 'We are getting nowhere, what should we do?!' said Kyoya, clearly agitated by the situation. While chaos ensues, I start to feel dizzy and lightheaded along with a nagging pain in my chest and not being able to breathe. I let out a soft curse, I was having a panic attack!!"
 
 var calm = "I remember grabbing my pills. I never told the Fleet about my anxiety, so they forgot to provide my pills. Good thing I had them on hand. I throw my head back and swallow the pill dry. It takes a little, but the idea of the pill being in your system helps clear up my thoughts. I tried gritting my teeth and closing my eyes. The alarm blaring in the background. I remembered learning something in Galaxy Garrison about black holes. A minuscule beat in the pull- where there was just a minute of nothing. Enough time for the thrusters to pull you out. I rush forward, pulling up the scan of the black hole in front of us, and look at the graph of the pulses of high energy leaving it. I think I got it. I turn back to my team, and Erwin gives me a nod. 'Everyone, get a hold of yourselves and get in position!!!' said Erwin. Everyone gets up and go back to their station. 'Kyoya, you need to navigate us through this,' said Erwin. Kyoya nodded, 'Ok, I think I found the gap but it&apos;s pretty far' 'How far?' said Erwin worried.'Around 100 miles,' Kyoya said while staring at Erwin. 'Ok, we are going to need to boost yourselves toward the gap and out but there&apos;s a risk,' said Erwin 'What is the risk?' said Yoruichi. 'The ship might fall apart in the process'; everyone gasps. I steeled my nerves, 'It&apos;s ok. I&apos;ll activate boosters when I have to.'"
+var helpYoruichiNow = "Then I go blank for a while but am jolted awake by Riza shaking me viciously, demanding that I wake up. I sit up with vigor- we&apos;ve lost precious time. Erwin and Kyoya are already at the main helm with Yorichi standing by the thrusters, waiting for the right moment. It takes a minute for my discombobulated mind to process what&apos;s going on. It&apos;s too late, I cannot be of any assistance anyway. I jump up, frantically typing on the keyboard to pull up a scan of the black hole, hoping that it might help Yoruichi decided when to press the button. We are biding time now, and my heart is hammering in my throat. Of course, I don&apos;t know how well Yoruichi knows how to navigate and read a black hole, after all, it isn&apos;t exactly common sense. Yoruichi looks a little panicked as she slammed her hand down on the button. It&apos;s a little off-timed, but it does enough. We rocket out of the system."
+var survive = "I hold on and see Erwin trying to hit the emergency forcefield button. He hits the button and we all fall on the ground. 'Is everyone ok?!' yelled Erwin. Everyone gets up and says yes. 'I&apos;m going to see what the damage is,' said Kyoya and Erwin. After a few minutes, they come back and tell us that the good news is that everyone is safe and none of the equipment is gone, the bad news is that a lot of our supplies and resources are gone forever."
 
+//Section 3: Fuel Stop
+var section3 = "Section 3: Fuel Stop"
+var maybeDie = "The entire team seems agitated after the mishap during the jump, and there are glances thrown at each other as the blinking symbol on the screen grows brighter. Our supplies are starting to dwindle, leaving us with supplies to last us for another two weeks. That&apos;s if we ration. 'I&apos;ll go,' Yoruichi decides, already pulling on the gloves for her spacesuit. There is a pause, and Kyoya shakes his head viciously, 'Absolutely not, there is a good chance that the ship&apos;s engine could make a jump at any time. We should wait and try to fix the engine first.' Kyoya screams 'But if we take too long, there will be no power to run the O2. We could all <strong>die</strong>!!'"
+
+//calmKyoya()
+var agree = "I stepped closer to Yoruichi, deciding to make myself heard, 'We need fuel to test the engine as I&apos;m fixing it. Plus, you guys need oxygen in here.'<br>" + "She nodded in agreement, stubbornly finishing to zip up her suit, and tethered herself to the ship. <br>" + "While she was out, we all watched the oxygen levels start to drop dangerously low, my head started to get foggy, and a little numb. I couldn&apos;t think, but we were waiting for Yoruichi to come back. <br>" + "After a little while, my eyes started to grow heavy, my breaths shallow. My eyes closed, and they didn&apos;t open again."
+//so we die^?
+var stay = "'It&apos;s too dangerous!' I point out, 'I noticed that the ship was rattling from the main brig. We could be dealing with a mechanical, or technical problem. We don&apos;t know, and we should stay safe until we can know what&apos;s going on.' <br>"
+var fix = "Thankfully I brought my work tools. Now I can fix the problem. <br>"
+var leave = "Nevertheless, Kyoya decides to leave anyways. <br>"
+var quiet = "I decided that I shouldn&apos;t interfere, my decisions have led the whole team down paths that they certainly shouldn&apos;t have gone. <br> Kyoya leaves. <br>...<br>"
+var KyoyaReturns = "Later...Kyoya comes back and with supplies and resources for the rest of your trip. We are all getting ready to go and see what the planet has for us."
+
+//Section 4: The Ending
+var section4 = "Section 4: The Ending"
+var arrive = "The ship is practically rattling as it slows out of FTL, we were hardly awake. Our reserves were down to the last box, and we are hoping that we&apos;ll be able to find something sustainable on the planet we&apos;d been sent to. I stood up, walking over to the large window that was on the side of the ship. <br> My breath caught in my chest. There was debris everywhere, practically floating, only held by the planet&apos;s gravity. A solid shade of blue disrupted only by little spots of what it looked like land that poked out of the ocean. "
+
+//seePlanet()
+var check = "CO2 levels are off the charts, it&apos;s super hot, possibly acid in the atmosphere "
+var orbit = "Through the debris, there is a large screen. And I mean large; it seems to be tethered to a large satellite. Both flickering faintly. Solar-powered, I presume. <br>" + "Riza gives me a look, 'Should we check out what it is? It obviously works.' <br>" +
+"I swallow quickly, planet G2V-S3 is starting to give me a bad feeling. This planet should have been habitable, but it&apos;s flooded itself. Practically overheated. After a moment, I nodded, agreeing with Riza. <br>" + "'Let&apos;s check that out.' <br>" + "We find a place to land and land the ship. I get off the ship and noticed that we are surrounded by water yet find fire in the distance. I also notice how the ground looks really dry and is mixed with trash and plastic. You look up at the sky and it looks like a bright orange color. I then look down at the water that&apos;s surrounding us and also how there&apos;s trash everywhere. <br>" + "Yoruichi was already strapping up to go hook the cable of the screen to the ship. After all, it was solar-powered, and the sun was on the other side. [ basically, the transmission is like 'yo this used to be earth and uhhh... We ruined it lolz please don&apos;t do this to your own planets XD' ] <strong> The End </strong>"
 
 
 var quitstr = "Thank you for playing this game!"
@@ -120,7 +143,12 @@ function startgame()
     document.getElementById("NextDay").style.display = "none";
     document.getElementById("panic-attack-options").style.display = "none";
     document.getElementById("live-or-die-buttons").style.display = "none";
-
+    document.getElementById("part2-end-button").style.display = "none";
+    document.getElementById("calm-Kyoya-buttons").style.display = "none";
+    document.getElementById("part3-end-button").style.display = "none";
+    document.getElementById("see-planet-buttons").style.display = "none";
+    document.getElementById("helpYoruichi").style.display = "none";
+    document.getElementById("holdOn").style.display = "none";
 }
 
 function chooseWeapon(choice)
@@ -301,28 +329,30 @@ function fastForward() {
     document.getElementById("startover").style.display = "block";
   } else if (yesJump == 1){//checked engine, continue game
     document.getElementById("game").innerHTML = jump;
+    document.getElementById("NextDay").style.display = "block";
   }
   document.getElementById("Jump").style.display = "none";
-  document.getElementById("NextDay").style.display = "block";
+
 }
 
 function goToNextDay(){
   document.getElementById("game").innerHTML = gotonextday;
   document.getElementById("NextDay").style.display = "none";
-  document.getElementById("panic-attack").style.display = "block";
+  document.getElementById("panic-attack-options").style.display = "block";
 }
 
 function panicAttack() {
   if (item == 1){ //taken pills
     document.getElementById("game").innerHTML = calm;
   } else {
-    document.getElementById("game").innerHTML = options;
-    document.getElementById("startover").style.display = "none";
-    //document.getElementById("check-engine-buttons").style.display = "block";
+    document.getElementById("game").innerHTML = "Oh no! I forgot to bring my pills!";
+    //document.getElementById("startover").style.display = "block";
   }
   document.getElementById("panic-attack-options").style.display = "none";
+  document.getElementById("helpYoruichi").style.display = "block";
 }
 
+/**
 function liveOrDie(choice)
 {
     document.getElementById("MainBrig").style.display = "none";
@@ -333,6 +363,65 @@ function liveOrDie(choice)
       }
    document.getElementById("live-or-die-buttons").style.display = "none";
    document.getElementById("").style.display = "block";
+    var image = document.getElementById("image");
+    image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
+}
+**/
+
+function remainAwake(choice){
+  if (choice == 1){ // help yoruichi
+    document.getElementById("game").innerHTML = helpYoruichiNow;
+    document.getElementById("helpYoruichi").style.display = "none";
+    document.getElementById("holdOn").style.display = "block";
+  }
+  if (choice == 2){ //hold on
+    document.getElementById("holdOn").style.display = "none";
+    document.getElementById("game").innerHTML = survive;
+    document.getElementById("part2-end-button").style.display = "block";
+  }
+}
+
+function continuetoPart3(){ //NOT DONE
+  document.getElementById("heading").innerHTML = section3;
+  document.getElementById("game").innerHTML = maybeDie;
+  document.getElementById("part2-end-button").style.display = "none";
+  document.getElementById("calm-Kyoya-buttons").style.display = "block";
+}
+
+function calmKyoya(choice){
+  if (choice == 1){ //agree with Kyoya (and die???)
+    document.getElementById("game").innerHTML = agree;
+    document.getElementById("startover").style.display = "block";
+  } else if (choice == 2){ //tell Kyoya to stay
+    if (item == 3){ //brought worktools
+      document.getElementById("game").innerHTML = stay + fix + leave + KyoyaReturns;
+    } else {
+      document.getElementById("game").innerHTML = stay + leave + KyoyaReturns;
+    }
+    document.getElementById("part3-end-button").style.display = "block";
+  } else if (choice == 3){ //stay quiet
+    document.getElementById("game").innerHTML = quiet + KyoyaReturns;
+    document.getElementById("part3-end-button").style.display = "block";
+  }
+  document.getElementById("calm-Kyoya-buttons").style.display = "none";
+}
+
+function continuetoPart4() {
+  document.getElementById("heading").innerHTML = section4;
+  document.getElementById("game").innerHTML = arrive;
+  document.getElementById("part3-end-button").style.display = "none";
+  document.getElementById("see-planet-buttons").style.display = "block";
+}
+
+function seePlanet(choice) {
+  if (choice == 1){ //checkPlanet
+      document.getElementById("game").innerHTML = check;
+      document.getElementById("checkPlanet").style.display = "none";
+  } else if (choice == 2){ //orbitPlanet
+      document.getElementById("game").innerHTML = orbit;
+      document.getElementById("see-planet-buttons").style.display = "none";
+      document.getElementById("startover").style.display = "block";
+  }
     var image = document.getElementById("image");
     image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
 }
