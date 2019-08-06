@@ -59,7 +59,7 @@ var checkSystem = "Online systems seem to be working, there are no glitches or m
 //(When they get out of the asteroid belt and travel, they die)
 var jumpFail = "The engine was never fixed, so the jump failed. The entire crew died. Game over. "
 var jump = "DAY 5: No anomalies detected"
-var gotonextday = "DAY 6: We were all resting in the living quarters. Kyoya and Riza were arguing over what&apos;s the best way to travel if you couldn&apos;t travel faster than light, while Erwin and Yoruichi and are trying to figure out what to do. I was trying to read up on the latest news from home planet when I heard the space alert, and started to walk toward the control panel to see what&apos;s happening; We&apos;re heading towards a black hole!! We all got into position to try and leave the black hole but it's no use. There was a simple rule with blackholes: you start to sink in faster the closer you get. Everyone is panicking, “We are getting nowhere, what should we do?!” said Kyoya, clearly agitated by the situation. While chaos ensues, I start to feel dizzy and lightheaded along with a nagging pain in my chest and not being able to breathe. I let out a soft curse, I was having a panic attack!!"
+var gotonextday = "DAY 6: We were all resting in the living quarters. Kyoya and Riza were arguing over what&apos;s the best way to travel if you couldn&apos;t travel faster than light, while Erwin and Yoruichi and are trying to figure out what to do. I was trying to read up on the latest news from home planet when I heard the space alert, and started to walk toward the control panel to see what&apos;s happening; We&apos;re heading towards a black hole!! We all got into position to try and leave the black hole but it's no use. There was a simple rule with blackholes: you start to sink in faster the closer you get. Everyone is panicking, 'We are getting nowhere, what should we do?!'' said Kyoya, clearly agitated by the situation. While chaos ensues, I start to feel dizzy and lightheaded along with a nagging pain in my chest and not being able to breathe. I let out a soft curse, I was having a panic attack!!"
 
 var calm = "I remember grabbing my pills. I never told the Fleet about my anxiety, so they forgot to provide my pills. Good thing I had them on hand. I throw my head back and swallow the pill dry. It takes a little, but the idea of the pill being in your system helps clear up my thoughts. I tried gritting my teeth and closing my eyes. The alarm blaring in the background. I remembered learning something in Galaxy Garrison about black holes. A minuscule beat in the pull- where there was just a minute of nothing. Enough time for the thrusters to pull you out. I rush forward, pulling up the scan of the black hole in front of us, and look at the graph of the pulses of high energy leaving it. I think I got it. I turn back to my team, and Erwin gives me a nod. 'Everyone, get a hold of yourselves and get in position!!!' said Erwin. Everyone gets up and go back to their station. 'Kyoya, you need to navigate us through this,' said Erwin. Kyoya nodded, 'Ok, I think I found the gap but it&apos;s pretty far' 'How far?' said Erwin worried.'Around 100 miles,' Kyoya said while staring at Erwin. 'Ok, we are going to need to boost yourselves toward the gap and out but there&apos;s a risk,' said Erwin 'What is the risk?' said Yoruichi. 'The ship might fall apart in the process'; everyone gasps. I steeled my nerves, 'It&apos;s ok. I&apos;ll activate boosters when I have to.'"
 
@@ -94,6 +94,9 @@ function startgame()
     var image = document.getElementById("image");
     image.src = "https://img.purch.com/h/1000/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzEwNC81NzQvb3JpZ2luYWwvbmdjMzA3OS1jaGFuZHJhLXNwYWNlLWJ1YmJsZXMuanBn";
 
+    //document.getElementById("other-buttons").style.display = "none";
+    //document.getElementById("choose-weapon-buttons").style.display = "block";
+
     var lrbuttons = document.getElementById("choose-weapon-buttons");
     lrbuttons.style.display = "block";
 
@@ -117,6 +120,7 @@ function startgame()
     document.getElementById("NextDay").style.display = "none";
     document.getElementById("panic-attack-options").style.display = "none";
     document.getElementById("live-or-die-buttons").style.display = "none";
+
 }
 
 function chooseWeapon(choice)
@@ -134,8 +138,9 @@ function chooseWeapon(choice)
     var image = document.getElementById("image");
     image.src = "download.jpg";
 
-    document.getElementById("choose-weapon-buttons").style.display = "none";
     document.getElementById("greet-crew-buttons").style.display = "block";
+    document.getElementById("choose-weapon-buttons").style.display = "none";
+
 }
 
 //sound option
@@ -291,19 +296,17 @@ function CheckEngine(choice)
 }
 
 function fastForward() {
-  if (yesJump == 2){ //checked system
+  if (yesJump == 2){ //checked system, dies if attempts to jump
     document.getElementById("game").innerHTML = jumpFail;
     document.getElementById("startover").style.display = "block";
-  } else if (yesJump == 1){
+  } else if (yesJump == 1){//checked engine, continue game
     document.getElementById("game").innerHTML = jump;
-    //document.getElementById("check-engine-buttons").style.display = "block";
   }
   document.getElementById("Jump").style.display = "none";
+  document.getElementById("NextDay").style.display = "block";
 }
 
-/*
 function goToNextDay(){
-  document.getElementById("Jump").style.display = "none";
   document.getElementById("game").innerHTML = gotonextday;
   document.getElementById("NextDay").style.display = "none";
   document.getElementById("panic-attack").style.display = "block";
@@ -333,4 +336,3 @@ function liveOrDie(choice)
     var image = document.getElementById("image");
     image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
 }
-*/

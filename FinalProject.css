@@ -37,6 +37,7 @@ button {
   margin-right: auto;
   width: 50%;
 }
+/**
 @font-face {
     font-family: typewriter;
     src: url("rough_typewriter_X_bold.ttf");
@@ -45,7 +46,7 @@ button {
     font-family: typewriter_ie;
     src: url("rough_typewriter_X_bold.eot");
 }
-​
+​**/
 @media (orientation: landscape){
     div#scroller {
         height: 75%;
