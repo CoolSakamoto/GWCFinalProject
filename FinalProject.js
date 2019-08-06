@@ -152,7 +152,9 @@ function startgame()
     document.getElementById("see-planet-buttons").style.display = "none";
     document.getElementById("helpYoruichi").style.display = "none";
     document.getElementById("holdOn").style.display = "none";
-    document.getElementById("next-day-buttons").style.display = "none";
+    document.getElementById("goToDay2").style.display = "none";
+    document.getElementById("goToDay3").style.display = "none";
+    document.getElementById("goToDay4").style.display = "none";
 }
 
 function chooseWeapon(choice)
@@ -287,12 +289,12 @@ function afterBlast(choice)
         document.getElementById("goToDay2").style.display = "none";
         document.getElementById("goToDay3").style.display = "block";
       }
-      if (choice == 3){//goToDay3 after resting
+      if (choice == 4){//goToDay3 after resting
         document.getElementById("game").innerHTML = rest + day2 + day3;
         document.getElementById("goToDay3").style.display = "none";
         document.getElementById("goToDay4").style.display = "block";
       }
-      if (choice == 3){//goToDay4 after resting
+      if (choice == 5){//goToDay4 after resting
         document.getElementById("game").innerHTML = rest + day2 + day3 + day4;
         document.getElementById("goToDay4").style.display = "none";
         document.getElementById("panic-buttons").style.display = "block";
