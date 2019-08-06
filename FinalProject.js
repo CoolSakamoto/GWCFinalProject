@@ -46,7 +46,10 @@ var blastOff = "Going to be making a stop in a nebulae 5,000 light-years away (5
 //afterBlast()
 var exploreTwo = "While the ship makes it to the first rest stop, I suppose it should be best to try to do my job. I looked through the drawers in the main hangar and was able to find better tools to provide for me. I looked through the tools and was pleasantly surprised by the selection. Aside from the main hanger, I decided to check the loading bay, which was full of our food and water for the trip. It seems like the ship was stocked for a good few days. Two weeks max. Possibly for the roundtrip. "
 //must rest
-var rest = "The five hours pass easily, everyone trying to get into pace with the ship. <br>" + "DAY 1: Success <br>" + "DAY 2: No mishaps, refueled <br>" + "DAY 3: finally realized how good dried (insert food) tastes <br>"+ "DAY 4: There is a jolt that hits the side of our ship, sending me crashing into my breakfast. 'What was that?' Riza asked, looking up at me from her novel. 'I don&apos;t know, let me check it out,' said Yoruichi. She comes back from the helm looking quite distressed. Apparently, flight plans didn&apos;t know we were running through an asteroid belt. "
+var rest = "The five hours pass easily, everyone trying to get into pace with the ship. <br>" + "DAY 1: Success <br>"
+var day2 = "DAY 2: No mishaps, refueled <br>"
+var day3 = "DAY 3: finally realized how good dried insects and lizards taste <br>"
+var day4 = "DAY 4: There is a jolt that hits the side of our ship, sending me crashing into my breakfast. 'What was that?' Riza asked, looking up at me from her novel. 'I don&apos;t know, let me check it out,' said Yoruichi. She comes back from the helm looking quite distressed. Apparently, flight plans didn&apos;t know we were running through an asteroid belt. "
 
 //panicButtons()
 var panic = "My spoon drops in the oatmeal, the room going silent. Only for a moment, as the ship rockets to the other side again. We better start figuring out how to solve the problem. "
@@ -149,6 +152,7 @@ function startgame()
     document.getElementById("see-planet-buttons").style.display = "none";
     document.getElementById("helpYoruichi").style.display = "none";
     document.getElementById("holdOn").style.display = "none";
+    document.getElementById("next-day-buttons").style.display = "none";
 }
 
 function chooseWeapon(choice)
@@ -225,8 +229,8 @@ function continueToPart2(){
   document.getElementById("inside-ship-buttons").style.display = "block";
   document.getElementById("Inspect").style.display = "none";
   document.getElementById("BlastOff").style.display = "none";
-  document.getElementById("panicButtons").style.display = "none";
-  document.getElementById("CheckEngine").style.display = "none";
+  document.getElementById("panic-buttons").style.display = "none";
+  document.getElementById("check-engine-buttons").style.display = "none";
   document.getElementById("game").innerHTML = theShip;
   //add buttons 8/4/2019...line 33 of organized info
 
@@ -273,11 +277,27 @@ function blastOffNow() {
 function afterBlast(choice)
 {
     document.getElementById("BlastOff").style.display = "none";
-    if (choice == 1){
+    if (choice == 1){//rest
       document.getElementById("game").innerHTML = rest;
       document.getElementById("after-blast-buttons").style.display = "none";
-      document.getElementById("panic-buttons").style.display = "block";
-    } else if (choice == 2){ //explore hanger
+      document.getElementById("goToDay2").style.display = "block";
+    }
+      if (choice == 3){//goToDay2 after resting
+        document.getElementById("game").innerHTML = rest + day2;
+        document.getElementById("goToDay2").style.display = "none";
+        document.getElementById("goToDay3").style.display = "block";
+      }
+      if (choice == 3){//goToDay3 after resting
+        document.getElementById("game").innerHTML = rest + day2 + day3;
+        document.getElementById("goToDay3").style.display = "none";
+        document.getElementById("goToDay4").style.display = "block";
+      }
+      if (choice == 3){//goToDay4 after resting
+        document.getElementById("game").innerHTML = rest + day2 + day3 + day4;
+        document.getElementById("goToDay4").style.display = "none";
+        document.getElementById("panic-buttons").style.display = "block";
+      }
+    if (choice == 2){ //explore hanger
       document.getElementById("game").innerHTML = exploreTwo;
       document.getElementById("ExploreHanger").style.display = "none";
     }
