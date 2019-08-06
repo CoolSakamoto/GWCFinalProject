@@ -145,7 +145,6 @@ function startgame()
     document.getElementById("Jump").style.display = "none";
     document.getElementById("NextDay").style.display = "none";
     document.getElementById("panic-attack-options").style.display = "none";
-    document.getElementById("live-or-die-buttons").style.display = "none";
     document.getElementById("part2-end-button").style.display = "none";
     document.getElementById("calm-Kyoya-buttons").style.display = "none";
     document.getElementById("part3-end-button").style.display = "none";
@@ -374,21 +373,6 @@ function panicAttack() {
   document.getElementById("helpYoruichi").style.display = "block";
 }
 
-/**
-function liveOrDie(choice)
-{
-    document.getElementById("MainBrig").style.display = "none";
-    if (choice == 1 && choice == 2){ //click option one
-        document.getElementById("game").innerHTML = optionFailed;
-      } else {
-        document.getElementById("game").innerHTML = optionSaved;
-      }
-   document.getElementById("live-or-die-buttons").style.display = "none";
-   document.getElementById("").style.display = "block";
-    var image = document.getElementById("image");
-    image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
-}
-**/
 
 function remainAwake(choice){
   if (choice == 1){ // help yoruichi
