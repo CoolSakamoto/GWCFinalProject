@@ -89,8 +89,8 @@ var arrive = "The ship is practically rattling as it slows out of FTL, we were h
 //seePlanet()
 var check = "CO2 levels are off the charts, it&apos;s super hot, possibly acid in the atmosphere "
 var orbit = "Through the debris, there is a large screen. And I mean large; it seems to be tethered to a large satellite. Both flickering faintly. Solar-powered, I presume. <br>" + "Riza gives me a look, 'Should we check out what it is? It obviously works.' <br>" +
-"I swallow quickly, planet G2V-S3 is starting to give me a bad feeling. This planet should have been habitable, but it&apos;s flooded itself. Practically overheated. After a moment, I nodded, agreeing with Riza. <br>" + "'Let&apos;s check that out.' <br>" + "We find a place to land and land the ship. I get off the ship and noticed that we are surrounded by water yet find fire in the distance. I also notice how the ground looks really dry and is mixed with trash and plastic. You look up at the sky and it looks like a bright orange color. I then look down at the water that&apos;s surrounding us and also how there&apos;s trash everywhere. <br>" + "Yoruichi was already strapping up to go hook the cable of the screen to the ship. After all, it was solar-powered, and the sun was on the other side. [ basically, the transmission is like 'yo this used to be earth and uhhh... We ruined it lolz please don&apos;t do this to your own planets XD' ] <strong> The End </strong>"
-
+"I swallow quickly, planet G2V-S3 is starting to give me a bad feeling. This planet should have been habitable, but it&apos;s flooded itself. Practically overheated. After a moment, I nodded, agreeing with Riza. <br>" + "'Let&apos;s check that out.' <br>" + "We find a place to land and land the ship. I get off the ship and noticed that we are surrounded by water yet find fire in the distance. I also notice how the ground looks really dry and is mixed with trash and plastic. You look up at the sky and it looks like a bright orange color. I then look down at the water that&apos;s surrounding us and also how there&apos;s trash everywhere. <br>"
+var lasttext = "Yoruichi was already strapping up to go hook the cable of the screen to the ship. After all, it was solar-powered, and the sun was on the other side. [ basically, the transmission is like 'yo this used to be earth and uhhh... We ruined it lolz please don&apos;t do this to your own planets XD' ] <strong> The End </strong>"
 
 var quitstr = "Thank you for playing this game!"
 
@@ -155,6 +155,7 @@ function startgame()
     document.getElementById("goToDay2").style.display = "none";
     document.getElementById("goToDay3").style.display = "none";
     document.getElementById("goToDay4").style.display = "none";
+    document.getElementById("the-end-button").style.display = "none";
 }
 
 function chooseWeapon(choice)
@@ -493,9 +494,14 @@ function seePlanet(choice) {
   } else if (choice == 2){ //orbitPlanet
       document.getElementById("game").innerHTML = orbit;
       document.getElementById("see-planet-buttons").style.display = "none";
-      document.getElementById("startover").style.display = "block";
-        var image = document.getElementById("image");
-        image.src = "ref/theEnd.jpg"
+      document.getElementById("the-end-button").style.display = "block";
+  }
+  if (choice == 3){
+    document.getElementById("game").innerHTML = lasttext;
+    document.getElementById("the-end-button").style.display = "none";
+    document.getElementById("startover").style.display = "block";
+      var image = document.getElementById("image");
+      image.src = "ref/theEnd.jpg"
   }
     //var image = document.getElementById("image");
     //image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
