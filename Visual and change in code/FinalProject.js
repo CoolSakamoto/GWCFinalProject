@@ -16,7 +16,7 @@ var greetCrewText = "The message finally loads on the big screen, and a peppy au
 
 //checkWatch()
 //Are we supposed to have actual file info here? maybe we could just upload a pic or smth"
-var readFile = "Goal: planet G2V-S3 <br> One known to be full of life, but lost life approximately 50,000 years ago. Reasons unknown, but the Fleet still hopes that we will be able to restore the planet to the habitable paradise it once was. "
+var readFile = "Goal: Planet G2V-S3 <br> Once known to be full of life, but lost life approximately 50,000 years ago. Reasons unknown, but the Fleet still hopes that we will be able to restore the planet to the habitable paradise it once was. "
 var contactCommander = "Commander Hellsing tells me that someone needs to go there first to see if the planet is safe for life. "
 var checkWatchText = "My team and I start to head towards the control room to talk about who is going to go; they decide that I should go. "
 
@@ -38,7 +38,7 @@ var explore = "The main brig is set with controls, automated for the most part. 
     var noTools = "If only I had taken my worktools, then I would have been able to fix the ship."
     var isEngineFixed = false;
     var backToRoom = "I was pleasantly surprised that the command ship had managed to load my handprint into the ship&apos;s systems. All I had to do was press my hand against the control panel, and the metal door slid open to reveal my room. The setup was bare, simple. One bed with an overhang for storage. A desk, and a chiffarobe for me to set my clothes and other miscellaneous items. "
-var team = "Erwin Smith (Pilot)(middle) <br> Kyoya Ootori (Navigator)(left) <br>	Riza Hawkeye (Medic)(far left) <br>	Yoruichi Shihoyin (Expedition)(right) "
+var team = "Erwin Smith (Pilot) <br> Kyoya Ootori (Navigator) <br>	Riza Hawkeye (Medic) <br>	Yoruichi Shihoyin (Expedition) "
 
 //*after clicking one option, blastOff option appears
 var blastOff = "Going to be making a stop in a nebulae 5,000 light-years away (5-hour trip). We all strap into our perspective seats, readying for the rocketing of the jump. The only person on this ship that hasn&apos;t experienced FTL travel is possibly Kyoya, our navigator. Though, he seems to be doing pretty well for a first-timer. "
@@ -46,7 +46,10 @@ var blastOff = "Going to be making a stop in a nebulae 5,000 light-years away (5
 //afterBlast()
 var exploreTwo = "While the ship makes it to the first rest stop, I suppose it should be best to try to do my job. I looked through the drawers in the main hangar and was able to find better tools to provide for me. I looked through the tools and was pleasantly surprised by the selection. Aside from the main hanger, I decided to check the loading bay, which was full of our food and water for the trip. It seems like the ship was stocked for a good few days. Two weeks max. Possibly for the roundtrip. "
 //must rest
-var rest = "The five hours pass easily, everyone trying to get into pace with the ship. <br>" + "DAY 1: Success <br>" + "DAY 2: No mishaps, refueled <br>" + "DAY 3: finally realized how good dried (insert food) tastes <br>"+ "DAY 4: There is a jolt that hits the side of our ship, sending me crashing into my breakfast. 'What was that?' Riza asked, looking up at me from her novel. 'I don&apos;t know, let me check it out,' said Yoruichi. She comes back from the helm looking quite distressed. Apparently, flight plans didn&apos;t know we were running through an asteroid belt. "
+var rest = "The five hours pass easily, everyone trying to get into pace with the ship. <br>" + "DAY 1: Success <br>"
+var day2 = "DAY 2: No mishaps, refueled <br>"
+var day3 = "DAY 3: finally realized how good dried insects and lizards taste <br>"
+var day4 = "DAY 4: There is a jolt that hits the side of our ship, sending me crashing into my breakfast. 'What was that?' Riza asked, looking up at me from her novel. 'I don&apos;t know, let me check it out,' said Yoruichi. She comes back from the helm looking quite distressed. Apparently, flight plans didn&apos;t know we were running through an asteroid belt. "
 
 //panicButtons()
 var panic = "My spoon drops in the oatmeal, the room going silent. Only for a moment, as the ship rockets to the other side again. We better start figuring out how to solve the problem. "
@@ -142,13 +145,15 @@ function startgame()
     document.getElementById("Jump").style.display = "none";
     document.getElementById("NextDay").style.display = "none";
     document.getElementById("panic-attack-options").style.display = "none";
-    document.getElementById("live-or-die-buttons").style.display = "none";
     document.getElementById("part2-end-button").style.display = "none";
     document.getElementById("calm-Kyoya-buttons").style.display = "none";
     document.getElementById("part3-end-button").style.display = "none";
     document.getElementById("see-planet-buttons").style.display = "none";
     document.getElementById("helpYoruichi").style.display = "none";
     document.getElementById("holdOn").style.display = "none";
+    document.getElementById("goToDay2").style.display = "none";
+    document.getElementById("goToDay3").style.display = "none";
+    document.getElementById("goToDay4").style.display = "none";
 }
 
 function chooseWeapon(choice)
@@ -174,17 +179,17 @@ function chooseWeapon(choice)
 //sound option
 function greetCrew(choice)
 {
-  if (choice == 1){
-    document.getElementById("game").innerHTML = hiErwin + greetCrewText;
-      var image = document.getElementById("image");
-      image.src = "sayHiToErwin.jpg"
-  } else if (choice == 2){
-    document.getElementById("game").innerHTML = hiRiza + greetCrewText;
-      var image = document.getElementById("image");
-      image.src = "sayHiToRiza.jpg"
-  } else if (choice == 3){
-    document.getElementById("game").innerHTML = ignore + greetCrewText;
-  }
+    if (choice == 1){
+      document.getElementById("game").innerHTML = hiErwin + greetCrewText;
+        var image = document.getElementById("image");
+        image.src = "sayHiToErwin.jpg"
+    } else if (choice == 2){
+      document.getElementById("game").innerHTML = hiRiza + greetCrewText;
+        var image = document.getElementById("image");
+        image.src = "sayHiToRiza.jpg"
+    } else if (choice == 3){
+      document.getElementById("game").innerHTML = ignore + greetCrewText;
+    }
 
     //var image = document.getElementById("image");
     //image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
@@ -197,12 +202,16 @@ function checkWatch(choice)
 {
     if (choice == 1){
       document.getElementById("game").innerHTML = readFile + checkWatchText;
+        var image = document.getElementById("image");
+        image.src = "file.jpg"
     } else if (choice == 2){
       document.getElementById("game").innerHTML = contactCommander + checkWatchText;
-      var image = document.getElementById("image");
-      image.src = "commander.jpg"
+        var image = document.getElementById("image");
+        image.src = "commander.jpg"
     }
 
+    //var image = document.getElementById("image");
+    //image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
 
     document.getElementById("check-watch-buttons").style.display = "none";
     document.getElementById("escape-method-buttons").style.display = "block";
@@ -233,8 +242,8 @@ function continueToPart2(){
   document.getElementById("inside-ship-buttons").style.display = "block";
   document.getElementById("Inspect").style.display = "none";
   document.getElementById("BlastOff").style.display = "none";
-  document.getElementById("panicButtons").style.display = "none";
-  document.getElementById("CheckEngine").style.display = "none";
+  document.getElementById("panic-buttons").style.display = "none";
+  document.getElementById("check-engine-buttons").style.display = "none";
   document.getElementById("game").innerHTML = theShip;
   //add buttons 8/4/2019...line 33 of organized info
 
@@ -249,15 +258,14 @@ function insideShip(choice)
         var image = document.getElementById("image");
         image.src = "mainBrig.jpg";
 
-
     } else if (choice == 2){
       document.getElementById("game").innerHTML = backToRoom;
         var image = document.getElementById("image");
         image.src = "bedroom.jpg";
     } else if (choice == 3){
       document.getElementById("game").innerHTML = team;
-      var image = document.getElementById("image");
-      image.src = "crew.jpg";
+        var image = document.getElementById("image");
+        image.src = "crew.jpg";
     }
     document.getElementById("BlastOff").style.display = "block";
     if (choice == 4){ //inspect engine
@@ -274,8 +282,6 @@ function insideShip(choice)
       var image = document.getElementById("image");
       image.src = "engineRoom1.jpg";
     }
-    //var image = document.getElementById("image");
-    //image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
     //only for next function blastOff(): document.getElementById("inside-ship-buttons").style.display = "none";
     //document.getElementById("check-watch-buttons").style.display = "block";
 }
@@ -285,28 +291,52 @@ function blastOffNow() {
   document.getElementById("game").innerHTML = blastOff;
   document.getElementById("BlastOff").style.display = "none";
   document.getElementById("after-blast-buttons").style.display = "block";
-  var image = document.getElementById("image");
-  image.src = "blastOff1.jpg";
+    var image = document.getElementById("image");
+    image.src = "blastOff1.jpg";
 }
 
 function afterBlast(choice)
 {
     document.getElementById("BlastOff").style.display = "none";
-    if (choice == 1){
+    if (choice == 1){//rest
       document.getElementById("game").innerHTML = rest;
       document.getElementById("after-blast-buttons").style.display = "none";
-      document.getElementById("panic-buttons").style.display = "block";
-      var image = document.getElementById("image");
-      image.src = "kitchen.jpg";
-    } else if (choice == 2){ //explore hanger
+      document.getElementById("goToDay2").style.display = "block";
+        var image = document.getElementById("image");
+        image.src = "kitchen.jpg";
+        var image = document.getElementById("image");
+        image.src = "blastOff1.jpg";
+    }
+      if (choice == 3){//goToDay2 after resting
+        document.getElementById("game").innerHTML = rest + day2;
+        document.getElementById("goToDay2").style.display = "none";
+        document.getElementById("goToDay3").style.display = "block";
+          var image = document.getElementById("image");
+          image.src = "blastOff1.jpg";
+      }
+      if (choice == 4){//goToDay3 after resting
+        document.getElementById("game").innerHTML = rest + day2 + day3;
+        document.getElementById("goToDay3").style.display = "none";
+        document.getElementById("goToDay4").style.display = "block";
+          var image = document.getElementById("image");
+          image.src = "blastOff1.jpg";
+      }
+      if (choice == 5){//goToDay4 after resting
+        document.getElementById("game").innerHTML = rest + day2 + day3 + day4;
+        document.getElementById("goToDay4").style.display = "none";
+        document.getElementById("panic-buttons").style.display = "block";
+          var image = document.getElementById("image");
+          image.src = "kitchen.jpg";
+      }
+    if (choice == 2){ //explore hanger
       document.getElementById("game").innerHTML = exploreTwo;
       document.getElementById("ExploreHanger").style.display = "none";
-      var image = document.getElementById("image");
-      image.src = "toolbox.jpg";
+        var image = document.getElementById("image");
+        image.src = "toolbox.jpg";
     }
 
     //var image = document.getElementById("image");
-    //image.src = "toolbox.jpg";
+    //image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
 }
 
 function panicButtons(choice)
@@ -315,19 +345,19 @@ function panicButtons(choice)
     if (choice == 1){ //panic
       document.getElementById("game").innerHTML = panic;
       document.getElementById("Panic").style.display = "none";
-      var image = document.getElementById("image");
-      image.src = "asteroidBelt1.jpg";
+        var image = document.getElementById("image");
+        image.src = "asteroidBelt1.jpg";
     } else if (choice == 2){ //mainbrig
       document.getElementById("game").innerHTML = mainBrig;
       document.getElementById("panic-buttons").style.display = "none";
       document.getElementById("check-engine-buttons").style.display = "block";
-      var image = document.getElementById("image");
-      image.src = "together.jpg";
       //document.getElementById("startover").style.display = "block";
+        var image = document.getElementById("image");
+        image.src = "together.jpg";
     }
 
     //var image = document.getElementById("image");
-    //image.src = "";
+    //image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
 }
 
 function CheckEngine(choice)
@@ -352,8 +382,8 @@ function CheckEngine(choice)
     }
    document.getElementById("check-engine-buttons").style.display = "none";
    document.getElementById("Jump").style.display = "block";
-    //var image = document.getElementById("image");
-    //image.src = "checkEngine.jpg";
+     //var image = document.getElementById("image");
+     //image.src = "checkEngine.jpg";
 }
 
 function fastForward() {
@@ -393,21 +423,6 @@ function panicAttack() {
     image.src = "together2.jpg";
 }
 
-/**
-function liveOrDie(choice)
-{
-    document.getElementById("MainBrig").style.display = "none";
-    if (choice == 1 && choice == 2){ //click option one
-        document.getElementById("game").innerHTML = optionFailed;
-      } else {
-        document.getElementById("game").innerHTML = optionSaved;
-      }
-   document.getElementById("live-or-die-buttons").style.display = "none";
-   document.getElementById("").style.display = "block";
-    var image = document.getElementById("image");
-    image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
-}
-**/
 
 function remainAwake(choice){
   if (choice == 1){ // help yoruichi
@@ -416,7 +431,6 @@ function remainAwake(choice){
     document.getElementById("holdOn").style.display = "block";
       var image = document.getElementById("image");
       image.src = "helpYoui.jpg";
-
   }
   if (choice == 2){ //hold on
     document.getElementById("holdOn").style.display = "none";
@@ -442,7 +456,6 @@ function calmKyoya(choice){
     document.getElementById("startover").style.display = "block";
       var image = document.getElementById("image");
       image.src = "gameover1.jpg";
-
   } else if (choice == 2){ //tell Kyoya to stay
     if (item == 3){ //brought worktools
       document.getElementById("game").innerHTML = stay + fix + leave + KyoyaReturns;
@@ -475,11 +488,13 @@ function seePlanet(choice) {
       document.getElementById("game").innerHTML = check;
       document.getElementById("checkPlanet").style.display = "none";
         var image = document.getElementById("image");
-        image.src = "landedOnEarth.jpg"
+        image.src = "status.jpg"
   } else if (choice == 2){ //orbitPlanet
       document.getElementById("game").innerHTML = orbit;
       document.getElementById("see-planet-buttons").style.display = "none";
       document.getElementById("startover").style.display = "block";
+        var image = document.getElementById("image");
+        image.src = "theEnd.jpg"
   }
     //var image = document.getElementById("image");
     //image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
