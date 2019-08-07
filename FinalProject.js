@@ -1,3 +1,4 @@
+//with images
 //test javascript using:
 //javascript:alert("hello world");
 //use <br> to make a break line
@@ -16,7 +17,7 @@ var greetCrewText = "The message finally loads on the big screen, and a peppy au
 
 //checkWatch()
 //Are we supposed to have actual file info here? maybe we could just upload a pic or smth"
-var readFile = "Goal: planet G2V-S3 <br> One known to be full of life, but lost life approximately 50,000 years ago. Reasons unknown, but the Fleet still hopes that we will be able to restore the planet to the habitable paradise it once was. "
+var readFile = "Goal: Planet G2V-S3 <br> Once known to be full of life, but lost life approximately 50,000 years ago. Reasons unknown, but the Fleet still hopes that we will be able to restore the planet to the habitable paradise it once was. "
 var contactCommander = "Commander Hellsing tells me that someone needs to go there first to see if the planet is safe for life. "
 var checkWatchText = "My team and I start to head towards the control room to talk about who is going to go; they decide that I should go. "
 
@@ -103,7 +104,7 @@ function quit()
     element.innerHTML = quitstr;
 
     var image = document.getElementById("image");
-    image.src = "https://www.visitmelbourne.com/-/media/images/mornington-peninsula/things-to-do/nature-and-wildlife/ashcombe-maze_mp_r_106550_1150x863.jpg?ts=20180904590120";
+    image.src = "ref/bye.jpg";
 
     var startover = document.getElementById("startover");
     startover.style.display = "none";
@@ -118,7 +119,7 @@ function startgame()
     element.innerHTML = start;
 
     var image = document.getElementById("image");
-    image.src = "https://img.purch.com/h/1000/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzEwNC81NzQvb3JpZ2luYWwvbmdjMzA3OS1jaGFuZHJhLXNwYWNlLWJ1YmJsZXMuanBn";
+    image.src = "ref/bedroom.jpg";
 
     //document.getElementById("other-buttons").style.display = "none";
     //document.getElementById("choose-weapon-buttons").style.display = "block";
@@ -169,7 +170,7 @@ function chooseWeapon(choice)
     element.innerHTML = outsideRoom;
 
     var image = document.getElementById("image");
-    image.src = "download.jpg";
+    image.src = "ref/livingQuarters.jpg";
 
     document.getElementById("greet-crew-buttons").style.display = "block";
     document.getElementById("choose-weapon-buttons").style.display = "none";
@@ -181,14 +182,18 @@ function greetCrew(choice)
 {
     if (choice == 1){
       document.getElementById("game").innerHTML = hiErwin + greetCrewText;
+        var image = document.getElementById("image");
+        image.src = "ref/sayHiToErwin.jpg"
     } else if (choice == 2){
       document.getElementById("game").innerHTML = hiRiza + greetCrewText;
+        var image = document.getElementById("image");
+        image.src = "ref/sayHiToRiza.jpg"
     } else if (choice == 3){
       document.getElementById("game").innerHTML = ignore + greetCrewText;
     }
 
-    var image = document.getElementById("image");
-    image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
+    //var image = document.getElementById("image");
+    //image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
 
     document.getElementById("greet-crew-buttons").style.display = "none";
     document.getElementById("check-watch-buttons").style.display = "block";
@@ -198,12 +203,16 @@ function checkWatch(choice)
 {
     if (choice == 1){
       document.getElementById("game").innerHTML = readFile + checkWatchText;
+        var image = document.getElementById("image");
+        image.src = "ref/file.jpg"
     } else if (choice == 2){
       document.getElementById("game").innerHTML = contactCommander + checkWatchText;
+        var image = document.getElementById("image");
+        image.src = "ref/commander.jpg"
     }
 
-    var image = document.getElementById("image");
-    image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
+    //var image = document.getElementById("image");
+    //image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
 
     document.getElementById("check-watch-buttons").style.display = "none";
     document.getElementById("escape-method-buttons").style.display = "block";
@@ -215,13 +224,17 @@ function escapeMethod(choice)
     if (choice == 1){
       document.getElementById("game").innerHTML = pod;
       document.getElementById("part1-end-button").style.display = "block";
+        var image = document.getElementById("image");
+        image.src = "ref/blastOff1.jpg";
     } else if (choice == 2){
       document.getElementById("game").innerHTML = airlock;
       document.getElementById("startover").style.display = "block";
+        var image = document.getElementById("image");
+        image.src = "ref/gameover1.jpg";
     }
 
-    var image = document.getElementById("image");
-    image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
+    //var image = document.getElementById("image");
+    //image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
 }
 
 function continueToPart2(){
@@ -243,11 +256,17 @@ function insideShip(choice)
       document.getElementById("game").innerHTML = explore;
       document.getElementById("Explore").style.display = "none";
       document.getElementById("Inspect").style.display = "block";
+        var image = document.getElementById("image");
+        image.src = "ref/mainBrig.jpg";
 
     } else if (choice == 2){
       document.getElementById("game").innerHTML = backToRoom;
+        var image = document.getElementById("image");
+        image.src = "ref/bedroom.jpg";
     } else if (choice == 3){
       document.getElementById("game").innerHTML = team;
+        var image = document.getElementById("image");
+        image.src = "ref/crew.jpg";
     }
     document.getElementById("BlastOff").style.display = "block";
     if (choice == 4){ //inspect engine
@@ -261,9 +280,9 @@ function insideShip(choice)
       } else {
         document.getElementById("game").innerHTML = inspect + noTools;
       }
+      var image = document.getElementById("image");
+      image.src = "ref/engineRoom1.jpg";
     }
-    var image = document.getElementById("image");
-    image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
     //only for next function blastOff(): document.getElementById("inside-ship-buttons").style.display = "none";
     //document.getElementById("check-watch-buttons").style.display = "block";
 }
@@ -273,6 +292,8 @@ function blastOffNow() {
   document.getElementById("game").innerHTML = blastOff;
   document.getElementById("BlastOff").style.display = "none";
   document.getElementById("after-blast-buttons").style.display = "block";
+    var image = document.getElementById("image");
+    image.src = "ref/blastOff1.jpg";
 }
 
 function afterBlast(choice)
@@ -282,29 +303,41 @@ function afterBlast(choice)
       document.getElementById("game").innerHTML = rest;
       document.getElementById("after-blast-buttons").style.display = "none";
       document.getElementById("goToDay2").style.display = "block";
+        var image = document.getElementById("image");
+        image.src = "ref/kitchen.jpg";
+        var image = document.getElementById("image");
+        image.src = "ref/blastOff1.jpg";
     }
       if (choice == 3){//goToDay2 after resting
         document.getElementById("game").innerHTML = rest + day2;
         document.getElementById("goToDay2").style.display = "none";
         document.getElementById("goToDay3").style.display = "block";
+          var image = document.getElementById("image");
+          image.src = "ref/blastOff1.jpg";
       }
       if (choice == 4){//goToDay3 after resting
         document.getElementById("game").innerHTML = rest + day2 + day3;
         document.getElementById("goToDay3").style.display = "none";
         document.getElementById("goToDay4").style.display = "block";
+          var image = document.getElementById("image");
+          image.src = "ref/blastOff1.jpg";
       }
       if (choice == 5){//goToDay4 after resting
         document.getElementById("game").innerHTML = rest + day2 + day3 + day4;
         document.getElementById("goToDay4").style.display = "none";
         document.getElementById("panic-buttons").style.display = "block";
+          var image = document.getElementById("image");
+          image.src = "ref/kitchen.jpg";
       }
     if (choice == 2){ //explore hanger
       document.getElementById("game").innerHTML = exploreTwo;
       document.getElementById("ExploreHanger").style.display = "none";
+        var image = document.getElementById("image");
+        image.src = "ref/toolbox.jpg";
     }
 
-    var image = document.getElementById("image");
-    image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
+    //var image = document.getElementById("image");
+    //image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
 }
 
 function panicButtons(choice)
@@ -313,15 +346,19 @@ function panicButtons(choice)
     if (choice == 1){ //panic
       document.getElementById("game").innerHTML = panic;
       document.getElementById("Panic").style.display = "none";
+        var image = document.getElementById("image");
+        image.src = "ref/asteroidBelt1.jpg";
     } else if (choice == 2){ //mainbrig
       document.getElementById("game").innerHTML = mainBrig;
       document.getElementById("panic-buttons").style.display = "none";
       document.getElementById("check-engine-buttons").style.display = "block";
       //document.getElementById("startover").style.display = "block";
+        var image = document.getElementById("image");
+        image.src = "ref/together.jpg";
     }
 
-    var image = document.getElementById("image");
-    image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
+    //var image = document.getElementById("image");
+    //image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
 }
 
 function CheckEngine(choice)
@@ -330,27 +367,37 @@ function CheckEngine(choice)
     if (choice == 1){ //check engin
       if (isEngineFixed == true){
         document.getElementById("game").innerHTML = engineFixed;
+          var image = document.getElementById("image");
+          image.src = "ref/checkEngine.jpg";
       } else {
         document.getElementById("game").innerHTML = checkEngine;
+          var image = document.getElementById("image");
+          image.src = "ref/checkEngine.jpg";
       }
       yesJump = 1;
     } else if (choice == 2){ //check system
       document.getElementById("game").innerHTML = checkSystem;
       yesJump = 2;
+        var image = document.getElementById("image");
+        image.src = "ref/spacecraftCP.jpg";
     }
    document.getElementById("check-engine-buttons").style.display = "none";
    document.getElementById("Jump").style.display = "block";
-    var image = document.getElementById("image");
-    image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
+     //var image = document.getElementById("image");
+     //image.src = "checkEngine.jpg";
 }
 
 function fastForward() {
   if (yesJump == 2){ //checked system, dies if attempts to jump
     document.getElementById("game").innerHTML = jumpFail;
     document.getElementById("startover").style.display = "block";
+      var image = document.getElementById("image");
+      image.src = "ref/gameover1.jpg";
   } else if (yesJump == 1){//checked engine, continue game
     document.getElementById("game").innerHTML = jump;
     document.getElementById("NextDay").style.display = "block";
+      var image = document.getElementById("image");
+      image.src = "ref/sucess.jpg";
   }
   document.getElementById("Jump").style.display = "none";
 
@@ -360,6 +407,8 @@ function goToNextDay(){
   document.getElementById("game").innerHTML = gotonextday;
   document.getElementById("NextDay").style.display = "none";
   document.getElementById("panic-attack-options").style.display = "block";
+    var image = document.getElementById("image");
+    image.src = "ref/blackHole.jpg";
 }
 
 function panicAttack() {
@@ -371,6 +420,8 @@ function panicAttack() {
   }
   document.getElementById("panic-attack-options").style.display = "none";
   document.getElementById("helpYoruichi").style.display = "block";
+    var image = document.getElementById("image");
+    image.src = "ref/together2.jpg";
 }
 
 
@@ -379,11 +430,15 @@ function remainAwake(choice){
     document.getElementById("game").innerHTML = helpYoruichiNow;
     document.getElementById("helpYoruichi").style.display = "none";
     document.getElementById("holdOn").style.display = "block";
+      var image = document.getElementById("image");
+      image.src = "ref/helpYoui.jpg";
   }
   if (choice == 2){ //hold on
     document.getElementById("holdOn").style.display = "none";
     document.getElementById("game").innerHTML = survive;
     document.getElementById("part2-end-button").style.display = "block";
+      var image = document.getElementById("image");
+      image.src = "ref/uGotOut.jpg";
   }
 }
 
@@ -392,17 +447,25 @@ function continuetoPart3(){ //NOT DONE
   document.getElementById("game").innerHTML = maybeDie;
   document.getElementById("part2-end-button").style.display = "none";
   document.getElementById("calm-Kyoya-buttons").style.display = "block";
+    var image = document.getElementById("image");
+    image.src = "ref/together.jpg";
 }
 
 function calmKyoya(choice){
   if (choice == 1){ //agree with Kyoya (and die???)
     document.getElementById("game").innerHTML = agree;
     document.getElementById("startover").style.display = "block";
+      var image = document.getElementById("image");
+      image.src = "ref/gameover1.jpg";
   } else if (choice == 2){ //tell Kyoya to stay
     if (item == 3){ //brought worktools
       document.getElementById("game").innerHTML = stay + fix + leave + KyoyaReturns;
+        var image = document.getElementById("image");
+        image.src = "ref/goingToEarth.jpg";
     } else {
       document.getElementById("game").innerHTML = stay + leave + KyoyaReturns;
+        var image = document.getElementById("image");
+        image.src = "ref/goingToEarth.jpg";
     }
     document.getElementById("part3-end-button").style.display = "block";
   } else if (choice == 3){ //stay quiet
@@ -417,17 +480,23 @@ function continuetoPart4() {
   document.getElementById("game").innerHTML = arrive;
   document.getElementById("part3-end-button").style.display = "none";
   document.getElementById("see-planet-buttons").style.display = "block";
+    var image = document.getElementById("image");
+    image.src = "ref/landedOnEarth.jpg"
 }
 
 function seePlanet(choice) {
   if (choice == 1){ //checkPlanet
       document.getElementById("game").innerHTML = check;
       document.getElementById("checkPlanet").style.display = "none";
+        var image = document.getElementById("image");
+        image.src = "ref/status.jpg"
   } else if (choice == 2){ //orbitPlanet
       document.getElementById("game").innerHTML = orbit;
       document.getElementById("see-planet-buttons").style.display = "none";
       document.getElementById("startover").style.display = "block";
+        var image = document.getElementById("image");
+        image.src = "ref/theEnd.jpg"
   }
-    var image = document.getElementById("image");
-    image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
+    //var image = document.getElementById("image");
+    //image.src = "https://img.newatlas.com/star-communications-35.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C2%2C1557%2C876&w=616&s=0ceb7b6be7eab4c4063f24f8a76aaed7";
 }

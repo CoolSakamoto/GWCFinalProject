@@ -56,11 +56,11 @@ button:hover {
 
 @font-face {
     font-family: typewriter;
-    src: url("rough_typewriter_X_bold.ttf");
+    src: url("ref/rough_typewriter_X_bold.ttf");
 }
 @font-face {
     font-family: typewriter_ie;
-    src: url("rough_typewriter_X_bold.eot");
+    src: url("ref/rough_typewriter_X_bold.eot");
 }
 ​
 @media (orientation: landscape){
